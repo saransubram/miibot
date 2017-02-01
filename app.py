@@ -34,9 +34,9 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     var1 = parameters.get("products")
     
-    balance = {'Lloyds':41, 'Santander':49, 'Barclays':37, 'lloyds and Barclays':33, 'Barclays and Santander':27, 'Lloyds and Santander':32, 'Lloyds Barclays and Santander':59}
+    products = {'Lloyds':41, 'Santander':49, 'Barclays':37, 'lloyds and Barclays':33, 'Barclays and Santander':27, 'Lloyds and Santander':32, 'Lloyds Barclays and Santander':59}
 
-    speech = "The balance of " + var1 + " is " + str(balance[var1])
+    speech = "The balance of " + var1 + " is " + str(products[var1])
 
     print("Response:")
     print(speech)
