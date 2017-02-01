@@ -28,15 +28,15 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "employee.age":
+    if req.get("result").get("action") != "customer.balance":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    var1 = parameters.get("employees")
+    var1 = parameters.get("products")
     
-    age = {'Sophie Quinn':41, 'Diane Russell':49, 'Ruth Cornish':37, 'Ella  Payne':33, 'Julia Nash':27, 'Lisa Miller':32, 'Liam Allan':59, 'Carl Baker':30,'Ava Vance':38}
+    balance = {'Lloyds':41, 'Santander':49, 'Barclays':37, 'lloyds and Barclays':33, 'Barclays and Santander':27, 'Lloyds and Santander':32, 'Lloyds Barclays and Santander':59}
 
-    speech = "The age of " + var1 + " is " + str(age[var1])
+    speech = "The balance of " + var1 + " is " + str(balance[var1])
 
     print("Response:")
     print(speech)
@@ -46,7 +46,7 @@ def makeWebhookResult(req):
         "displayText": speech,
         #"data": {},
         # "contextOut": [],
-        "source": "apiai-miibot"
+        "source": "apiai-cfds"
     }
 
 
